@@ -35,26 +35,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 	@Override
 	public void onClick(View v) {
-		Intent intent = new Intent(this, SecondActivity.class);
-		intent.putExtra("VALUE1", Double.valueOf(mEditText1.getText().toString()));
-		intent.putExtra("VALUE2", Double.valueOf(mEditText2.getText().toString()));
+		String eText1 = mEditText1.getText().toString();
+		String eText2 = mEditText2.getText().toString();
 
-		if (v.getId() == R.id.button1) {
-			//加算
-			intent.putExtra("VALUE3", 1);
-		} else if (v.getId() == R.id.button2) {
-			//減算
-			intent.putExtra("VALUE3", 2);
-		} else if (v.getId() == R.id.button3) {
-			//乗算
-			intent.putExtra("VALUE3", 3);
-		}
-		else if (v.getId() == R.id.button4) {
-			//除算
-			intent.putExtra("VALUE3", 4);
-		}
+		if(eText1.equals("") || eText2.equals("") ){
 
-		startActivity(intent);
+		} else {
+			Intent intent = new Intent(this, SecondActivity.class);
+			intent.putExtra("VALUE1", Double.valueOf(eText1));
+			intent.putExtra("VALUE2", Double.valueOf(eText2));
+
+			if (v.getId() == R.id.button1) {
+				//加算
+				intent.putExtra("VALUE3", 1);
+			} else if (v.getId() == R.id.button2) {
+				//減算
+				intent.putExtra("VALUE3", 2);
+			} else if (v.getId() == R.id.button3) {
+				//乗算
+				intent.putExtra("VALUE3", 3);
+			} else if (v.getId() == R.id.button4) {
+				//除算
+					intent.putExtra("VALUE3", 4);
+			}
+
+			startActivity(intent);
+
+		}
 	}
 
 }

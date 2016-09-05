@@ -10,6 +10,8 @@
         android:layout_height="wrap_content"
         android:hint="editText1"
         android:textSize="20sp"
+        android:inputType="numberDecimal"
+        android:maxLines="1"
         android:id="@+id/editText1"/>
 
     <EditText
@@ -17,6 +19,8 @@
         android:layout_height="wrap_content"
         android:hint="editText2"
         android:textSize="20sp"
+        android:inputType="numberDecimal"
+        android:maxLines="1"
         android:id="@+id/editText2"/>
 
     <Button
